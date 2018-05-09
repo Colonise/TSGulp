@@ -1,3 +1,3 @@
-# Gulp Typescript Decorators
+# TSGulp
 
 Helpful Typescript Decorators for Gulp
