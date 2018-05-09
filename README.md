@@ -1,2 +1,3 @@
-# TSGulp
-Use Gulp with Typescript
+# Gulp-TS-Decorators
+
+Helpful Typescript Decorators for Gulp
