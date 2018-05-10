@@ -1,7 +1,7 @@
 {
   "name": "tsgulp",
   "displayName": "TSGulp",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Helpful Typescript Decorators for Gulp",
   "main": "dist/index.js",
   "repository": {
