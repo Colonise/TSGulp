@@ -12,7 +12,7 @@ class GulpFile {
     clean() {
         return del(this.distFolder);
     }
-    
+
     @TSGulp.Dependencies('clean')
     compile() {
         this.tsProject.src()
