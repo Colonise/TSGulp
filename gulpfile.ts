@@ -22,8 +22,5 @@ class GulpFile {
 
     @TSGulp.Default()
     @TSGulp.Dependencies('clean', 'compile')
-    distribute() {
-        gulp.src(['index.d.ts'])
-            .pipe(gulp.dest(this.distFolder));
-    }
+    distribute() { }
 }
