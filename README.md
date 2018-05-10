@@ -20,7 +20,7 @@ Coming soon!
 ```ts
 import * as typescript from 'gulp-typescript';
 import { Project, Dependencies, Default } as TSGulp from 'tsgulp';
-impoty gulp = from 'gulp';
+import gulp  from 'gulp';
 import del from 'del';
 
 
