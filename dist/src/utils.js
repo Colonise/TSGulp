@@ -1,14 +1,4 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -17,53 +7,46 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var _ = __importStar(require("lodash"));
-var log = __importStar(require("fancy-log"));
-var BaseLogger = (function () {
-    function BaseLogger(name) {
+const _ = __importStar(require("lodash"));
+const log = __importStar(require("fancy-log"));
+class BaseLogger {
+    constructor(name) {
         this.name = name;
         this.displayName = '';
     }
-    BaseLogger.prototype.log = function (message) {
+    log(message) {
         log.default(this.compileMessage(message));
-    };
-    BaseLogger.prototype.warn = function (message) {
+    }
+    warn(message) {
         log.warn(this.compileMessage(message));
-    };
-    BaseLogger.prototype.createError = function (message) {
+    }
+    createError(message) {
         throw new Error(this.compileMessage(message));
-    };
-    BaseLogger.prototype.createTypeError = function (message) {
+    }
+    createTypeError(message) {
         throw new TypeError(this.compileMessage(message));
-    };
-    return BaseLogger;
-}());
+    }
+}
 exports.BaseLogger = BaseLogger;
-var Logger = (function (_super) {
-    __extends(Logger, _super);
-    function Logger(name) {
-        var _this = _super.call(this, name) || this;
-        _this.displayName = name;
-        return _this;
+class Logger extends BaseLogger {
+    constructor(name) {
+        super(name);
+        this.displayName = name;
     }
-    Logger.prototype.compileMessage = function (message) {
-        return this.displayName + ": " + message;
-    };
-    return Logger;
-}(BaseLogger));
+    compileMessage(message) {
+        return `${this.displayName}: ${message}`;
+    }
+}
 exports.Logger = Logger;
-var DecoratorLogger = (function (_super) {
-    __extends(DecoratorLogger, _super);
-    function DecoratorLogger(name) {
-        var _this = _super.call(this, name) || this;
-        _this.displayName = "@TSGulp." + name + "()";
-        return _this;
+class DecoratorLogger extends BaseLogger {
+    constructor(name) {
+        super(name);
+        this.displayName = `@TSGulp.${name}()`;
     }
-    DecoratorLogger.prototype.compileMessage = function (message) {
-        return this.displayName + ": " + message;
-    };
-    return DecoratorLogger;
-}(BaseLogger));
+    compileMessage(message) {
+        return `${this.displayName}: ${message}`;
+    }
+}
 exports.DecoratorLogger = DecoratorLogger;
 function processNameAndOptions(_nameOrOptions, _options) {
     var options = {};

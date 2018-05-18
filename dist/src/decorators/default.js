@@ -7,7 +7,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var TSGulp = __importStar(require("../TSGulp"));
+const TSGulp = __importStar(require("../TSGulp"));
 function Default() {
     return TSGulp.DefaultDecorator();
 }

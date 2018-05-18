@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "removeComments": true,
     "strict": true,
@@ -15,8 +15,5 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "experimentalDecorators": true
-  },
-  "exclude": [
-    "gulpfile.ts"
-  ]
+  }
 }
