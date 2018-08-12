@@ -1,5 +1,7 @@
 # TSGulp
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Colonise/TSGulp.svg)](https://greenkeeper.io/)
+
 Helpful Typescript Decorators for Gulp
 
 
